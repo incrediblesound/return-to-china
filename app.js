@@ -19,24 +19,12 @@ const app = {
     window.addEventListener('hashchange', (e) => {
       e.preventDefault()
       const hash = getHashFromURL(e.newURL)
-      if(/home/.test(hash)){
-        showBlog()
-        hideImage()
-        if(hash.split('/').length > 1){
-          const id = hash.split('/')[1]
-          const el = $('#'+id)
-          const top = el.offset().top
-          window.scrollTo(0, top)
-        }
-      } else if(/image/.test(hash)){
-        hideBlog()
-        showImage()
-        const path = makeImagePathFromHash(hash)
-        $('.img-display').attr('src', path)
-      }
+      navigate(hash)
     })
     if(!window.location.hash.length){
       this.changeHash('home')
+    } else {
+      navigate(window.location.hash)
     }
   },
   changeHash: function(val){
@@ -57,6 +45,24 @@ function getHashFromURL(url){
     window.location.hash = 'home'
   } else {
     return path[1]
+  }
+}
+
+function navigate(hash){
+  if(/home/.test(hash)){
+    showBlog()
+    hideImage()
+    if(hash.split('/').length > 1){
+      const id = hash.split('/')[1]
+      const el = $('#'+id)
+      const top = el.offset().top
+      window.scrollTo(0, top)
+    }
+  } else if(/image/.test(hash)){
+    hideBlog()
+    showImage()
+    const path = makeImagePathFromHash(hash)
+    $('.img-display').attr('src', path)
   }
 }
 
