@@ -1,0 +1,38 @@
+h1 {
+  text-align: center;
+}
+
+h1, p {
+  font-family: "Oxygen"
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.story {
+  margin: 0px 15% 0px 15%
+}
+
+.pictures {
+  border: solid 1px #ccc;
+  padding: 5px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+img {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.thumbnail {
+  height: 15%;
+  width: 15%;
+}
