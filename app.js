@@ -35,8 +35,9 @@ const app = {
         $('.img-display').attr('src', path)
       }
     })
-
-    this.changeHash('home')
+    if(!window.location.hash.length){
+      this.changeHash('home')
+    }
   },
   changeHash: function(val){
     window.location.hash = val
