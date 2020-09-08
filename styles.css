@@ -26,6 +26,8 @@ p {
 img {
   margin: 5px;
   cursor: pointer;
+  height: 100vh;
+  width: 100vw;
 }
 
 .hidden {
